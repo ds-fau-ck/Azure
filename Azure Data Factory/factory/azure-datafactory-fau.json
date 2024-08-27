@@ -1,0 +1,9 @@
+{
+	"name": "azure-datafactory-fau",
+	"location": "northeurope",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "014b75bc-4ac5-49fa-aadd-ddebacfe0264",
+		"tenantId": "6475e913-23c1-4cbc-92b8-e0cb4e9132ce"
+	}
+}
