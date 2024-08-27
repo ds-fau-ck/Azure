@@ -1,0 +1,29 @@
+What is Azure Data Factory?
+● Azure Data Factory (ADF) is a fully managed cloud-based data integration service that enables the creation, scheduling,
+and management of data pipelines.
+● It is used for Extract, Transform, Load (ETL) and Extract, Load, Transform (ELT) processes, allowing data movement and
+transformation across different services and environments.
+Key Features:
+● Data Integration: Connect and integrate data from over 90+ supported data sources.
+● Data Transformation: Perform data transformation at scale using Mapping Data Flows, SQL, and Python.
+● Orchestration: Automate and manage complex data workflows with triggers, control flows, and scheduling.
+● Scalability: Scalable processing powered by Azure’s serverless infrastructure.
+Core Components of Azure Data Factory
+● Pipelines: A logical grouping of activities that together perform a task. A pipeline is the foundation of an ADF workflow.
+● Activities: Tasks inside a pipeline, such as Copy Data, Data Flow, Execute SQL, etc.
+● Data Flows: Visual, code-free data transformations using Apache Spark. Used for complex data mapping, filtering, joining,
+and aggregations.
+● Datasets: Representations of data within ADF. Datasets point to data stored in data sources (e.g., Azure Blob Storage, SQL
+Server).
+● Linked Services: Connections to data sources or compute services. For example, linking to Azure Blob Storage or an
+Azure SQL Database.
+● Triggers: Mechanisms to start pipelines. Can be time-based (schedule) or event-based (file arrival).
+Common Use Cases for Azure Data Factory
+● Data Migration: Seamlessly migrate data between different environments (e.g., on-premises to cloud) or between different
+cloud services.
+● Data Warehousing: Load and transform large volumes of data from diverse sources into a data warehouse, enabling
+analytics and reporting.
+● Data Orchestration and Automation: Orchestrate complex ETL workflows that require multiple steps and involve
+dependencies between activities.
+● Big Data Integration: Integrate and process big data from data lakes and IoT devices with support for Hadoop, Spark, and
+Databricks.
