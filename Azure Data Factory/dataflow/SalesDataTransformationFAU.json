@@ -1,0 +1,70 @@
+{
+	"name": "SalesDataTransformationFAU",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "SourceSalesDataFAU",
+						"type": "DatasetReference"
+					},
+					"name": "sourceSalesFAU"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "SnowflakeTableFAU",
+						"type": "DatasetReference"
+					},
+					"name": "sinkFAU"
+				}
+			],
+			"transformations": [
+				{
+					"name": "filterFAU"
+				},
+				{
+					"name": "aggregateFAU"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          ORDERNUMBER as short,",
+				"          QUANTITYORDERED as short,",
+				"          PRICEEACH as double,",
+				"          ORDERLINENUMBER as short,",
+				"          SALES as double,",
+				"          ORDERDATE as timestamp,",
+				"          STATUS as string,",
+				"          QTR_ID as short,",
+				"          MONTH_ID as short,",
+				"          YEAR_ID as short",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> sourceSalesFAU",
+				"sourceSalesFAU filter(SALES>=2000) ~> filterFAU",
+				"filterFAU aggregate(groupBy(YEAR_ID,",
+				"          MONTH_ID),",
+				"     TOTAL_SALES = sum(SALES)) ~> aggregateFAU",
+				"aggregateFAU sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          YEAR_ID as string,",
+				"          MONTH_ID as string,",
+				"          TOTALSALES as string",
+				"     ),",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'table',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     stageInsert: true) ~> sinkFAU"
+			]
+		}
+	}
+}
