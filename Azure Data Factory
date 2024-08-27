@@ -1,0 +1,10 @@
+What is Azure Data Factory?
+● Azure Data Factory (ADF) is a fully managed cloud-based data integration service that enables the creation, scheduling,
+and management of data pipelines.
+● It is used for Extract, Transform, Load (ETL) and Extract, Load, Transform (ELT) processes, allowing data movement and
+transformation across different services and environments.
+Key Features:
+● Data Integration: Connect and integrate data from over 90+ supported data sources.
+● Data Transformation: Perform data transformation at scale using Mapping Data Flows, SQL, and Python.
+● Orchestration: Automate and manage complex data workflows with triggers, control flows, and scheduling.
+● Scalability: Scalable processing powered by Azure’s serverless infrastructure.
